@@ -1,6 +1,6 @@
 // Guarda o app no aparelho para abrir sem internet.
 // Ao atualizar o index.html, troque a versão abaixo (v1 -> v2) para os celulares baixarem a nova.
-const VERSAO = 'ronda5s-excel-v2';
+const VERSAO = 'ronda5s-excel-v3';
 const ARQUIVOS = ['./', './index.html', './manifest.webmanifest', './icon-180.png', './icon-192.png', './icon-512.png'];
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(VERSAO).then(c => c.addAll(ARQUIVOS)).then(() => self.skipWaiting()));
