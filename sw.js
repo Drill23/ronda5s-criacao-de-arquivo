@@ -1,12 +1,13 @@
 // Guarda o app no aparelho para abrir sem internet.
 // Ao atualizar o index.html, troque a versão abaixo (v1 -> v2) para os celulares baixarem a nova.
-const VERSAO = 'ronda5s-excel-v5';
+const VERSAO = 'ronda5s-excel-v6';
+const PREFIXO = 'ronda5s-excel-';
 const ARQUIVOS = ['./', './index.html', './manifest.webmanifest', './icon-180.png', './icon-192.png', './icon-512.png'];
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(VERSAO).then(c => c.addAll(ARQUIVOS)).then(() => self.skipWaiting()));
 });
 self.addEventListener('activate', e => {
-  e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== VERSAO).map(k => caches.delete(k)))).then(() => self.clients.claim()));
+  e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith(PREFIXO) && k !== VERSAO).map(k => caches.delete(k)))).then(() => self.clients.claim()));
 });
 self.addEventListener('fetch', e => {
   if (e.request.method !== 'GET') return;
@@ -16,6 +17,6 @@ self.addEventListener('fetch', e => {
         const cp = resp.clone(); caches.open(VERSAO).then(c => c.put(e.request, cp));
       }
       return resp;
-    }).catch(() => caches.match('./index.html')))
+    }).catch(() => caches.match('./index.html').then(r => r || Response.error())))
   );
 });
