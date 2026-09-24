@@ -1,0 +1,32 @@
+RONDA 5S — como colocar no ar (GitHub Pages, grátis)
+
+1. Crie uma conta em github.com (se ainda não tiver).
+2. Clique em "New repository". Nome: ronda5s-excel (ou o nome que preferir). Marque "Public". Crie.
+3. Na página do repositório, clique em "uploading an existing file"
+   e arraste TODOS os arquivos desta pasta (index.html, sw.js,
+   manifest.webmanifest e os 3 icon-*.png). Clique em "Commit changes".
+4. Vá em Settings > Pages. Em "Branch", escolha "main" e a pasta "/ (root)". Salve.
+5. Espere 1 ou 2 minutos. O endereço aparece ali mesmo:
+   https://SEU-USUARIO.github.io/ronda5s-excel/
+
+No iPhone:
+- Abra o endereço no Safari (com internet, só na primeira vez).
+- Toque em Compartilhar > "Adicionar à Tela de Início".
+- Pronto: ícone "Ronda 5S", abre em tela cheia e funciona sem internet.
+
+No Android: abra no Chrome > menu (3 pontinhos) > "Instalar app" ou "Adicionar à tela inicial".
+
+Para atualizar o app depois: suba o index.html novo e, no sw.js, troque
+o número da versão (ex.: ronda5s-excel-v1 por ronda5s-excel-v2). Os celulares pegam a versão nova na próxima
+vez que abrirem com internet.
+
+Atenção: repositório público = qualquer pessoa com o endereço consegue abrir.
+Nada da sua ronda fica no GitHub; os lançamentos ficam só em cada celular.
+
+Checklist em Excel:
+- Na tela da Ronda, toque em "Gerar checklist Excel" (ou "Gerar Excel" na barra de baixo).
+- No iPhone abre a tela de compartilhar: "Salvar em Arquivos", WhatsApp, e-mail ou OneDrive.
+- O arquivo vem só com a aba "Check de Auditoria", sem macro: área, avaliador e data
+  no cabeçalho, quantidade em cada item (0 quando não tem NC, NA quando marcado)
+  e as NCs por extenso. As notas são calculadas quando o arquivo é aberto no Excel.
+- Funciona sem internet. Rondas antigas também geram o Excel em Opções > Rondas anteriores.
